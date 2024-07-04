@@ -1,8 +1,8 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-	name = Alexander Eieland
-	email = alexander.kirkeby.eieland@computas.com
+	name = [username]
+	email = [email]
 [credential]
 	helper = store
 [init]
