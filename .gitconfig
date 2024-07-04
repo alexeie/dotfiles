@@ -1,0 +1,9 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = [NAME]
+	email = [EMAIL]
+[credential]
+	helper = store
+[init]
+	defaultBranch = main
