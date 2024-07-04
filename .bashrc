@@ -113,4 +113,7 @@ export NVM_DIR="$HOME/.nvm"
 
 export PATH=$PATH:$HOME/.tfenv/bin
 export PROMPT_DIRTRIM=2
+
+# Exports token for github auth:
+source ~/.github_auth
 ## export DFO_RAW_ST_URL=test
