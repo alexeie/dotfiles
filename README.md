@@ -13,14 +13,30 @@ stow --adopt .
 
 # Initial setup new machine:
 
+## Install pyenv
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
+    libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+curl https://pyenv.run | bash
+
 ## Install zsh + zplug
 sudo apt install zsh zplug -y
 
+## Install Oh-my-zsh
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+## Install Oh-my-zsh plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+
 ## Remove standard zshrc and replace with stow symlink
 cp ~/.zshrc ~/.original.zshrc
+rm ~/.zshrc
+
 cp ~/.bashrc ~/.original.bashrc
+rm ~/.bashrc
 
 ## Create symlinks, overwriting existing files in parent folder
 sudo stow --delete .
+sudo stow .
 
 
