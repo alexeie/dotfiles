@@ -17,6 +17,10 @@ stow --adopt .
 sudo apt install zsh zplug -y
 
 ## Remove standard zshrc and replace with stow symlink
-rm ~/.zshrc
-cd dotfiles | stow .
+cp ~/.zshrc ~/.original.zshrc
+cp ~/.bashrc ~/.original.bashrc
+
+## Create symlinks, overwriting existing files in parent folder
+sudo stow --delete .
+
 
