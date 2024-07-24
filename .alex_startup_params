@@ -1,19 +1,18 @@
-alias cdownloads="cd '/mnt/c/Documents and Settings/alei/Downloads'"
+#alias cdownloads="cd '/mnt/c/Documents and Settings/alei/Downloads'"
 alias start_docker="source ~/.start_docker"
-alias pyver="update-alternatives --config python3"
-
 alias clr="clear"
 alias p="pwd;echo"
 
 # To change python version:
 # update-alternatives --config python3
+#alias pyver="update-alternatives --config python3"
 
 # Shortcut to start venv:
 alias start_venv='echo "source venv/bin/activate"; source venv/bin/activate'
 
 # System monitors: htop | gtop | bashtop
 
-up() {
+function up() {
     # default parameter to 1 if non provided
     declare -i d=${@:-1}
     # ensure given parameter is non-negative. Print error and return if it is
