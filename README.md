@@ -38,5 +38,3 @@ rm ~/.bashrc
 ## Create symlinks, overwriting existing files in parent folder
 sudo stow --delete .
 sudo stow .
-
-
