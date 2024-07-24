@@ -47,5 +47,5 @@ stow -n -v .
 Dry Run: Use the -n flag to see what Stow would do without actually creating any symlinks  
 Verbose: -v  
 ```bash
-> stow -n -v .  
+stow -n -v .  
 ```
