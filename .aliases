@@ -5,3 +5,9 @@ alias clr="clear"
 alias p="pwd;echo"
 # Shortcut to start venv:
 alias start_venv='echo "source venv/bin/activate"; source venv/bin/activate'
+alias svenv="source venv/bin/activate"
+
+alias zshconfig="nano ~/.zshrc"
+alias ohmyzsh="nano ~/.oh-my-zsh"
+alias gs="git status"
+alias la="ls --group-directories-first -Fha"

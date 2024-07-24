@@ -104,14 +104,8 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-alias zshconfig="nano ~/.zshrc"
-alias ohmyzsh="nano ~/.oh-my-zsh"
-alias up="cd .."
-alias clr="clear"
-alias gs="git status"
-alias la="ls --group-directories-first -Fha"
-alias svenv="source venv/bin/activate"
+# Load aliases:
+source .aliases
 
 #export PATH="$HOME/.pyenv/bin:$PATH"
 #eval "$(pyenv init -)"
@@ -121,5 +115,3 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
-
-source ~/.private_functions
