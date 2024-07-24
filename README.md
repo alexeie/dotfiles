@@ -44,7 +44,8 @@ cd ~/dotfiles
 sudo stow .  
 stow -n -v .  
 ```
-Dry Run: You can use the -n or --dry-run flag to see what Stow would do without actually creating any symlinks. -v = verbose
+Dry Run: You can use the -n or --dry-run flag to see what Stow would do without actually creating any symlinks.  
+-v = verbose  
 ```bash
 > stow -n -v .  
 ```
