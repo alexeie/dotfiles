@@ -14,12 +14,16 @@ stow --adopt .
 # Initial setup on clean machine:
 
 ## Install zsh
+```bash
 sudo apt install zsh -y
+```
 
 ## Install Oh-my-zsh & plugins
-sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+```bash
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" \
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions \
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+```
 
 ## Install pyenv
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
@@ -27,8 +31,10 @@ sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
 curl https://pyenv.run | bash
 
 ## Remove standard bashrc & zshrc to replace with stow symlink
-mv ~/.zshrc ~/.original.zshrc
+```bash
+mv ~/.zshrc ~/.original.zshrc \
 mv ~/.bashrc ~/.original.bashrc
+```
 
 ## Create symlinks to the files in dotfiles folder
 ```bash
@@ -37,4 +43,6 @@ sudo stow .
 stow -n -v . \
 ```
 Dry Run: You can use the -n or --dry-run flag to see what Stow would do without actually creating any symlinks. -v = verbose
-> stow -n -v . 
+```bash
+> stow -n -v .
+```
