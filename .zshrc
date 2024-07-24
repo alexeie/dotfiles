@@ -113,8 +113,13 @@ alias gs="git status"
 alias la="ls --group-directories-first -Fha"
 alias svenv="source venv/bin/activate"
 
-export PATH="$HOME/.pyenv/bin:$PATH"
+#export PATH="$HOME/.pyenv/bin:$PATH"
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 source ~/.private_functions
