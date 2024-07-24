@@ -31,7 +31,10 @@ mv ~/.zshrc ~/.original.zshrc
 mv ~/.bashrc ~/.original.bashrc
 
 ## Create symlinks to the files in dotfiles folder
-> cd ~/dotfiles
-> sudo stow .
+```bash
+cd ~/dotfiles
+sudo stow .
+stow -n -v . \
+```
 Dry Run: You can use the -n or --dry-run flag to see what Stow would do without actually creating any symlinks. -v = verbose
 > stow -n -v . 
