@@ -1,0 +1,5 @@
+# Function that deletes .identifier-files created when windows copies files into wsl folder.
+# Called by stating > delete_files
+function delete_idfiles {
+	find . -type f -name "*.Identifier" -exec rm -f {} \;
+}
