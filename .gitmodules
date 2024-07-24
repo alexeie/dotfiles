@@ -1,0 +1,3 @@
+[submodule "scripts/generate_password"]
+	path = scripts/generate_password
+	url = https://github.com/alexeie/generate_password
