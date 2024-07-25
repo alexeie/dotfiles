@@ -105,7 +105,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Load aliases:
-source .aliases
+#source .aliases
 
 #export PATH="$HOME/.pyenv/bin:$PATH"
 #eval "$(pyenv init -)"
@@ -116,4 +116,17 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
+source ~/.alex_startup_params
+source ~/.aliases
 source ~/.github_auth
+
+#Functions in the folder ~/.zsh_functions are now autoloaded when they are needed
+fpath=(~/.zsh_functions $fpath)   # Add the directory to fpath
+
+export ZSH_FUNCTIONS_DIR=~/.zsh_functions
+autoload -Uz delete-idfiles
+autoload -Uz docker-stop-all
+autoload -Uz find-files
+autoload -Uz gen_pass
+autoload -Uz up
+

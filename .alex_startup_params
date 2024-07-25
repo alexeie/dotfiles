@@ -1,54 +1,37 @@
-#alias cdownloads="cd '/mnt/c/Documents and Settings/alei/Downloads'"
-alias start_docker="source ~/.start_docker"
-alias clr="clear"
-alias p="pwd;echo"
+#!/bin/sh
+#setopt kshglob  # Enable globbing of dotfiles
+
+# Load all scripts (hidden files) located in scripts folder:
+# Print error message if the script fails
+#for script in ~/scripts/.*; do
+#    if ! bash "$script"; then
+#        echo "Error executing: $script" >&2
+#    fi
+#done
+
+# Load all scripts (hidden and non-hidden) located in the scripts folder
+# Skip directories, print error on script failure, otherwise print success
+#for item in ~/scripts/* ~/scripts/.*; do  # Explicitly include hidden files
+#    if [ -f "$item" ] ; then   # POSIX-compliant file test
+#        if ! "$item"; then    # Execute directly, relying on shebang of the script
+#            echo "Error executing: $item" >&2
+#        else
+#            echo "Successfully executed: $item"
+#        fi
+#    fi 
+#done
 
 # To change python version:
 # update-alternatives --config python3
-#alias pyver="update-alternatives --config python3"
-
-# Shortcut to start venv:
-alias start_venv='echo "source venv/bin/activate"; source venv/bin/activate'
-
 # System monitors: htop | gtop | bashtop
-
-function up() {
-    # default parameter to 1 if non provided
-    declare -i d=${@:-1}
-    # ensure given parameter is non-negative. Print error and return if it is
-    (( $d < 0 )) && (>&2 echo "up: Error: negative value provided") && return 1;
-    # remove last d directories from pwd, append "/" in case result is empty
-    cd "$(pwd | sed -E 's;(/[^/]*){0,'$d'}$;;')/";
-}
-
-# Custom function for stopping all running docker containers
-function docker-stop-all() {
-    docker stop $(docker ps -a -q)
-}
-
-# Function that deletes .identifier-files created when windows copies files into wsl folder.
-# Called by stating > delete_files
-function delete_files {
-    find . -type f -name "*.Identifier" -exec rm -f {} \;
-}
-
-# Load function to search for files in current directory:
-# Use it by calling the function find_files "[search_string]"
-# It performs: find -maxdepth 1 -type f -iname "[search_string]" 
-source ~/.find_files
-
 # Python Function for generating strong password
-source ~/.gen_pass
-
+source ~/scripts/.gen_pass
 # Set google credentials
 # export GOOGLE_APPLICATION_CREDENTIALS=[~/dir/]
-
 # GCLOUD #########
 # gcloud config get-value account # Get Currently activated user
 # gcloud auth list
 # gcloud config set [user-email] # Activate logged in user
-# 
-
+#
 read -r GEMINI_API_KEY < ~/keys/gemini_api.txt
 export GEMINI_API_KEY
-

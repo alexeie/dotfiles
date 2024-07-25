@@ -1,5 +1,5 @@
 alias cdownloads="cd '/mnt/c/Documents and Settings/alei/Downloads'"
-alias start_docker="source ~/.start_docker"
+#alias start_docker="source ~/.start_docker"
 #alias pyver="update-alternatives --config python3"
 alias clr="clear"
 alias p="pwd;echo"
