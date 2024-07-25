@@ -1,4 +1,0 @@
-#!/bin/bash
-
-# This script will intentionally generate an error
-exit 1  # This line will cause the script to exit with a non-zero status, indicating failure

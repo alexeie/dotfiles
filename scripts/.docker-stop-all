@@ -1,4 +1,0 @@
-# Custom function for stopping all running docker containers
-function docker-stop-all() {
-	docker stop $(docker ps -a -q)
-}
