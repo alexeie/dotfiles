@@ -13,6 +13,9 @@ stow --adopt .
 
 # Initial setup on clean machine:
 
+sudo apt update
+sudo apt upgrade
+
 ## Install zsh
 ```bash
 sudo apt install zsh -y
@@ -25,11 +28,25 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/p
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting  
 ```
 
-## Install pyenv
+# Installing pyenv on new machine:
 ```bash
-sudo apt-get install -y make build-essential libssl-dev zlib1g-dev  
-    libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev  
-curl https://pyenv.run | bash  
+cd ~
+sudo apt update
+sudo apt upgrade
+sudo apt install -y make build-essential libssl-dev zlib1g-dev \
+        libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+        libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+curl https://pyenv.run | bash
+```
+Add the following lines to your ~/.zshrc file:
+```bash
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+```
+Then reload zshrc configuration:
+```bash
+source ~/.zshrc
 ```
 
 ## Remove standard bashrc & zshrc to replace with stow symlink
