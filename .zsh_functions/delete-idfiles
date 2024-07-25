@@ -1,0 +1,5 @@
+# Function to delete .Identifier files created by Windows in the current folder
+delete_idfiles() {
+    find . -type f -name "*.Identifier" -exec rm -f {} +
+    print "Deleted *.Identifier files in the current directory."
+}

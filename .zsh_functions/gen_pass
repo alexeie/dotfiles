@@ -1,0 +1,49 @@
+# Function: gen_pass
+# Description: 
+#   Generates a strong, random password using the `generate_password.py` script.
+#   The script is located in a subdirectory relative to this Bash script, and 
+#   it runs within a Python virtual environment to ensure proper dependency management.
+
+# Arguments:
+#   $1 [optional]: 
+#     The number of passwords to generate.
+#     Default: 1
+#   $2 [optional]: 
+#     The total length of the password.
+#     Default: 12
+
+# Usage:
+#   gen_pass             # Generate 1x 12-character password (default)
+#   gen_pass 5 20        # Generate 5x 20-character passwords
+
+# Output:
+#   Prints the generated password(s) to the console.
+
+# Dependencies:
+#   - Python 3
+#   - Virtual environment located in the 'generate_password/venv' subdirectory
+#   - `generate_password.py` script within the 'generate_password' subdirectory
+
+# Notes:
+#   - The function automatically activates and deactivates the virtual environment
+#     to ensure the correct Python version and dependencies are used.
+#   - If you encounter errors, ensure the virtual environment is set up correctly 
+#     and that the `generate_password.py` script is executable.
+
+gen_pass() {
+    local venv_path="$ZSH_FUNCTIONS_DIR/generate_password/venv"
+    local script_path="$ZSH_FUNCTIONS_DIR/generate_password/generate_password.py"
+
+    local num="${1:-1}"           # Number of passwords (default 1)
+    local len="${2:-12}"          # Length of each password (default 12)
+
+    if [[ ! -f "$script_path" ]]; then   
+        print "Error: Python script not found at $script_path" >&2
+        return 1
+    fi
+
+    source "$venv_path/bin/activate" &&
+    python3 "$script_path" -n "$num" -l "$len" &&
+    deactivate
+}
+

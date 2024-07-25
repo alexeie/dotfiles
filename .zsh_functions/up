@@ -1,0 +1,20 @@
+# Function to navigate up 'd' directories
+
+# Function to navigate up 'd' directories
+
+up() {
+  # Get the number of levels to go up (default to 1 if not provided)
+  local -i d="${@:-1}"
+
+  # Ensure 'd' is non-negative and print an error message if it is
+  if (( d < 0 )); then
+    print -ru2 "up: Error: negative value provided"
+    return 1
+  fi
+
+  # Navigate up 'd' levels, appending a slash if the result is an empty string
+  local new_path=$(printf '../%.0s' {1..$d})
+  [[ -n $new_path ]] && new_path+="/"  # Add a trailing slash if needed
+  cd "$new_path" 
+} 
+

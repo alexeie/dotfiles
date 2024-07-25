@@ -1,0 +1,12 @@
+# Custom function for stopping all running docker containers
+docker-stop-all() {
+    local container_ids
+    container_ids=(${(f)"$(docker ps -a -q)"})  # Capture container IDs in an array
+
+    if (( $#container_ids > 0 )); then  # Check if any containers are running
+        docker stop $container_ids
+        print "Stopped all running Docker containers."
+    else
+        print "No running Docker containers found."
+    fi
+}
