@@ -129,4 +129,3 @@ autoload -Uz docker-stop-all
 autoload -Uz find-files
 autoload -Uz gen_pass
 autoload -Uz up
-

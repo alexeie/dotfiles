@@ -1,31 +1,10 @@
 #!/bin/sh
 #setopt kshglob  # Enable globbing of dotfiles
 
-# Load all scripts (hidden files) located in scripts folder:
-# Print error message if the script fails
-#for script in ~/scripts/.*; do
-#    if ! bash "$script"; then
-#        echo "Error executing: $script" >&2
-#    fi
-#done
-
-# Load all scripts (hidden and non-hidden) located in the scripts folder
-# Skip directories, print error on script failure, otherwise print success
-#for item in ~/scripts/* ~/scripts/.*; do  # Explicitly include hidden files
-#    if [ -f "$item" ] ; then   # POSIX-compliant file test
-#        if ! "$item"; then    # Execute directly, relying on shebang of the script
-#            echo "Error executing: $item" >&2
-#        else
-#            echo "Successfully executed: $item"
-#        fi
-#    fi 
-#done
-
 # To change python version:
 # update-alternatives --config python3
 # System monitors: htop | gtop | bashtop
-# Python Function for generating strong password
-source ~/scripts/.gen_pass
+
 # Set google credentials
 # export GOOGLE_APPLICATION_CREDENTIALS=[~/dir/]
 # GCLOUD #########
