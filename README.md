@@ -41,11 +41,6 @@ mv ~/.bashrc ~/.original.bashrc
 ## Create symlinks to the files in dotfiles folder
 ```bash
 cd ~/dotfiles  
-sudo stow .  
-stow -n -v .  
-```
-Dry Run: Use the -n flag to see what Stow would do without actually creating any symlinks  
-Verbose: -v  
-```bash
-stow -n -v .  
+stow -n -v . # Dry run, verbose
+sudo stow . # If the changes look OK stow files to save symlinks in Home dir   
 ```
