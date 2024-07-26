@@ -66,3 +66,4 @@ cd ~/dotfiles
 stow -n -v . # Dry run, verbose
 sudo stow . # If the changes look OK stow files to save symlinks in Home dir   
 ```
+#Success
