@@ -42,8 +42,8 @@ gen_pass() {
         return 1
     fi
 
-    source "$venv_path/bin/activate" &&
-    python3 "$script_path" -n "$num" -l "$len" &&
+    source "$venv_path/bin/activate" 
+    python3 "$script_path" -n "$num" -l "$len" | clip.exe
     deactivate
 }
 
