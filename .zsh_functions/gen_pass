@@ -42,8 +42,20 @@ gen_pass() {
         return 1
     fi
 
+    # Start venv
     source "$venv_path/bin/activate" 
-    python3 "$script_path" -n "$num" -l "$len" | clip.exe
+
+    # Execute python script to generate safe passwords
+    # python3 "$script_path" -n "$num" -l "$len" | clip.exe
+    if [[ -n "$WSL_DISTRO_NAME" ]]; then  
+        # WSL environment: Use Windows-native clip.exe for clipboarding
+        python3 "$script_path" -n "$num" -l "$len" | clip.exe
+    else
+        # Native Ubuntu: Use Debian-native xclip for clipboarding
+        python3 "$script_path" -n "$num" -l "$len" | xclip -sel clip
+    fi
+
+    # Deactivate venv
     deactivate
 }
 
