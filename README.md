@@ -12,9 +12,10 @@ stow --adopt .
 	the file in ~/dotfiles will be overwritten by the file in root
 
 # Initial setup on clean machine:
-
+```bash
 sudo apt update
 sudo apt upgrade
+```
 
 ## Install zsh
 ```bash
@@ -34,6 +35,7 @@ sudo apt install stow -y
 ```
 
 # Installing pyenv on new machine:
+Needed for the python function to generate passwords
 ```bash
 cd ~
 sudo apt update
