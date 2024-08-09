@@ -12,7 +12,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="agnoster"
 # ZSH_THEME="bureau"
 # ZSH_THEME="tjkirch"
-ZSH_THEME="gnzh"
+ZSH_THEME="gnzhalex"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -76,6 +76,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 git 
+virtualenv
 zsh-autosuggestions 
 zsh-syntax-highlighting
 )
@@ -131,3 +132,17 @@ autoload -Uz gen_pass
 autoload -Uz up
 autoload -Uz t
 autoload -Uz ta
+
+export PATH=$PATH:/usr/bin/dot
+
+function virtualenv_info(){
+    # Get Virtual Env
+    if [[ -n "$VIRTUAL_ENV" ]]; then
+        # Strip out the path and just leave the env name
+        venv="${VIRTUAL_ENV##*/}"
+    else
+        # In case you don't have one activated
+        venv=''
+    fi
+    [[ -n "$venv" ]] && echo "(venv:$venv) "
+}
