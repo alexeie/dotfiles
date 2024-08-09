@@ -32,8 +32,8 @@ sudo apt install zsh -y
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"  
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions  
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting  
-cp ~/dotfiles/gnzhalex.zsh-themes ~/.oh-my-zsh/themes
-cp ~/dotfiles/virtualenv.plugin.zsh ~/.oh-my-zsh/plugins/virtualenv
+ln -s ~/dotfiles/gnzhalex.zsh-theme ~/.oh-my-zsh/themes/gnzhalex.zsh-theme # Create symbolic link to dotfiles
+ln -s ~/dotfiles/virtualenv.plugin.zsh ~/.oh-my-zsh/plugins/virtualenv/virtualenv.plugin.zsh # Create symbolic link to dotfiles
 ```
 
 ## Install stow
