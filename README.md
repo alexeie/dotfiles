@@ -29,11 +29,13 @@ sudo apt install zsh -y
 
 ## Install Oh-my-zsh & plugins
 ```bash
-sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"  
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+# Get Oh-my-zsh plugins:
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions  
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting  
-ln -s ~/dotfiles/gnzhalex.zsh-theme ~/.oh-my-zsh/themes/gnzhalex.zsh-theme # Create symbolic link to dotfiles
-ln -s ~/dotfiles/virtualenv.plugin.zsh ~/.oh-my-zsh/plugins/virtualenv/virtualenv.plugin.zsh # Create symbolic link to dotfiles
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+
+# Backup virtualenv original file to make room for symbolic link:
+mv ~/.oh-my-zsh/plugins/virtualenv/virtualenv.plugin.zsh ./.oh-my-zsh/plugins/virtualenv/virtualenv.plugin.zsh.bak 
 ```
 
 ## Install stow
