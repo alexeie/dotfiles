@@ -133,7 +133,6 @@ autoload -Uz up
 autoload -Uz t
 autoload -Uz ta
 
-export PATH=$PATH:/usr/bin/dot
 
 #function virtualenv_info(){
 #    # Get Virtual Env
@@ -146,3 +145,5 @@ export PATH=$PATH:/usr/bin/dot
 #    fi
 #    [[ -n "$venv" ]] && echo "(venv:$venv) "
 #}
+export PATH=$PATH:$HOME/.tfenv/bin
+export PATH=$PATH:/usr/bin/dot
