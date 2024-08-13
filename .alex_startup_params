@@ -12,5 +12,6 @@
 # gcloud auth list
 # gcloud config set [user-email] # Activate logged in user
 #
-read -r GEMINI_API_KEY < ~/keys/gemini_api.txt
-export GEMINI_API_KEY
+# Testing
+#read -r GEMINI_API_KEY < ~/keys/gemini_api.txt
+#export GEMINI_API_KEY
