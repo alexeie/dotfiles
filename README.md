@@ -39,9 +39,9 @@ mv ~/.oh-my-zsh/plugins/virtualenv/virtualenv.plugin.zsh ./.oh-my-zsh/plugins/vi
 ```
 
 # Download git submodules:
-´´´bash
+```bash
 git submodule update --init --recursive
-´´´
+```
 
 ## Install stow
 ```bash
