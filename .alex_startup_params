@@ -11,6 +11,11 @@
 # gcloud config get-value account # Get Currently activated user
 # gcloud auth list
 # gcloud config set [user-email] # Activate logged in user
-#
-read -r GEMINI_API_KEY < ~/keys/gemini_api.txt
-export GEMINI_API_KEY
+
+
+# Testing
+#read -r GEMINI_API_KEY < ~/keys/gemini_api.txt
+#export GEMINI_API_KEY
+
+# RUTER:
+export AWS_PROFILE=assumer

@@ -12,3 +12,5 @@ alias zshconfig="nano ~/.zshrc"
 alias ohmyzsh="nano ~/.oh-my-zsh"
 alias gs="git status"
 alias la="ls --group-directories-first -Fha"
+alias tf="terraform"
+
