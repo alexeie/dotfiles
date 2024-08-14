@@ -1,0 +1,20 @@
+#!/bin/sh
+#setopt kshglob  # Enable globbing of dotfiles
+
+# To change python version:
+# update-alternatives --config python3
+# System monitors: htop | gtop | bashtop
+
+# Set google credentials
+# export GOOGLE_APPLICATION_CREDENTIALS=[~/dir/]
+# GCLOUD #########
+# gcloud config get-value account # Get Currently activated user
+# gcloud auth list
+# gcloud config set [user-email] # Activate logged in user
+
+# Testing
+#read -r GEMINI_API_KEY < ~/keys/gemini_api.txt
+#export GEMINI_API_KEY
+
+# RUTER:
+export AWS_PROFILE=assumer
