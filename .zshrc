@@ -117,9 +117,8 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
-source ~/.alex_startup_params
+source ~/.startup_params
 source ~/.aliases
-source ~/.github_auth
 
 #Functions in the folder ~/.zsh_functions are now autoloaded when they are needed
 fpath=(~/.zsh_functions $fpath)   # Add the directory to fpath
