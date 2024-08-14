@@ -1,0 +1,3 @@
+# Function to search the command history
+
+hgrep () { fc -lim "*$@*" 1 }
