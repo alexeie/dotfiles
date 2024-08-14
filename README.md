@@ -38,6 +38,11 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 mv ~/.oh-my-zsh/plugins/virtualenv/virtualenv.plugin.zsh ./.oh-my-zsh/plugins/virtualenv/virtualenv.plugin.zsh.bak 
 ```
 
+# Download git submodules:
+´´´bash
+git submodule update --init --recursive
+´´´
+
 ## Install stow
 ```bash
 sudo apt install stow -y
