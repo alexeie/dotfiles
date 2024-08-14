@@ -38,9 +38,11 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 mv ~/.oh-my-zsh/plugins/virtualenv/virtualenv.plugin.zsh ./.oh-my-zsh/plugins/virtualenv/virtualenv.plugin.zsh.bak 
 ```
 
-# Download git submodules:
+# Download generate password git submodule and initialize its venv
 ```bash
 git submodule update --init --recursive
+cd ~/dotfiles/.zsh_functions/generate_password
+python3 -m venv venv
 ```
 
 ## Install stow
