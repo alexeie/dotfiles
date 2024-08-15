@@ -133,17 +133,6 @@ autoload -Uz t
 autoload -Uz ta
 autoload -Uz hgrep
 
-#function virtualenv_info(){
-#    # Get Virtual Env
-#    if [[ -n "$VIRTUAL_ENV" ]]; then
-#        # Strip out the path and just leave the env name
-#        venv="${VIRTUAL_ENV##*/}"
-#    else
-#        # In case you don't have one activated
-#        venv=''
-#    fi
-#    [[ -n "$venv" ]] && echo "(venv:$venv) "
-#}
 export PATH=$PATH:$HOME/.tfenv/bin
 export PATH=$PATH:/usr/bin/dot
 

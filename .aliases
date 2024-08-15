@@ -17,3 +17,5 @@ alias tf="terraform"
 alias t1="tree -a -L 1 --gitignore"
 alias t2="tree -a -L 2 --gitignore"
 alias t3="tree -a -L 3 --gitignore"
+
+alias login_aws='echo "aws login sso --profile assumer"; aws login sso --profile assumer'
