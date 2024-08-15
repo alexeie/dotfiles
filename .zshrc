@@ -148,6 +148,9 @@ export PATH=$PATH:$HOME/.tfenv/bin
 export PATH=$PATH:/usr/bin/dot
 
 # History options
+HISTSIZE=10000    # Number of commands to keep in memory
+SAVEHIST=10000     # Number of commands to save to the history file
+
 setopt EXTENDED_HISTORY          # Write the history file in the ':start:elapsed;command' format.
 setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
 setopt SHARE_HISTORY             # Share history between all sessions.

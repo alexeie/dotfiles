@@ -13,3 +13,7 @@ alias ohmyzsh="nano ~/.oh-my-zsh"
 alias gs="git status"
 alias la="ls --group-directories-first -Fha"
 alias tf="terraform"
+
+alias t1="tree -a -L 1 --gitignore"
+alias t2="tree -a -L 2 --gitignore"
+alias t3="tree -a -L 3 --gitignore"
