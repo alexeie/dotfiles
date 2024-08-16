@@ -20,3 +20,4 @@ alias t3="tree -a -L 3 --gitignore"
 
 alias tfauth='echo "aws sso login --profile assumer"; aws sso login --profile assumer'
 alias tfauth2='echo "export AWS_PROFILE=assumer"; export AWS_PROFILE=assumer'
+alias co='echo "code ."; code .'
