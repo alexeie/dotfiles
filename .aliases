@@ -18,8 +18,8 @@ alias t1="tree -a -L 1 --gitignore"
 alias t2="tree -a -L 2 --gitignore"
 alias t3="tree -a -L 3 --gitignore"
 
-alias tfauth1='echo "aws sso login --profile assumer"; aws sso login --profile assumer'
-alias tfauth2='echo "export AWS_PROFILE=assumer"; export AWS_PROFILE=assumer'
-alias tfauth='tfauth1;tfauth2'
+alias tfauth1='echo -e "====\naws sso login --profile assumer\n====";aws sso login --profile assumer'
+alias tfauth2='echo -e "====\nexport AWS_PROFILE=assumer\n====";export AWS_PROFILE=assumer'
+alias tfauth='tfauth1;echo " ";tfauth2'
 
-alias co='echo "code ."; code .'
+alias co='echo -e "code . \n";code .'
