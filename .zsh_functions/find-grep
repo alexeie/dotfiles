@@ -1,0 +1,18 @@
+function find-grep() {
+  local search_pattern=$1
+  local maxdepth=${2:-3}  # Default to 3 if no maxdepth is provided
+
+  # Check if search_pattern is provided
+  if [[ -z $search_pattern ]]; then
+    echo "Error: Please provide a search pattern."
+    return 1
+  fi
+
+  # Ensure maxdepth is a positive integer OR empty (to use the default)
+  if [[ ! $maxdepth =~ ^([1-9][0-9]*|)$ ]]; then
+    echo "Error: Invalid maxdepth. Please provide a positive integer or leave it empty for the default."
+    return 1
+  fi
+
+  find . -maxdepth $maxdepth -type f -exec grep -H "$search_pattern" {} \;
+}

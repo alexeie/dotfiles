@@ -132,6 +132,8 @@ autoload -Uz up
 autoload -Uz t
 autoload -Uz ta
 autoload -Uz hgrep
+autoload -Uz find-grep
+autoload -Uz git-push-new
 
 export PATH=$PATH:$HOME/.tfenv/bin
 export PATH=$PATH:/usr/bin/dot

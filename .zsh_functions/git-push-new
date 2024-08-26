@@ -1,0 +1,20 @@
+function git-push-new() {
+  #output=$(git push 2>&1)
+  output=$'echo -e "fatal: The current branch DATP-774-DBT-Cloud-lifecycle-policies-ignore-team-changes has no upstream branch.\nTo push the current branch and set the remote as upstream, use\n\n    git push --set-upstream origin DATP-774-DBT-Cloud-lifecycle-policies-ignore-team-changes\n\nTo have this happen automatically for branches without a tracking\nupstream, see push.autoSetupRemote in git help config."'
+  fourth_line=$(echo "$output" | sed -n '4p')
+
+  if [[ $fourth_line == "    git push --set-upstream "* ]]; then
+    echo "$fourth_line"
+    read -q "REPLY?Proceed with push (Y/N)? "
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+      trimmed_command=${fourth_line##+( )}
+      #eval "$trimmed_command" 
+      echo 
+      echo $trimmed_command
+    else
+      echo -e "\nPush aborted."
+    fi
+  else
+    echo "$output" 
+  fi
+}
