@@ -3,6 +3,7 @@ alias cdownloads="cd '/mnt/c/Documents and Settings/alei/Downloads'"
 #alias pyver="update-alternatives --config python3"
 alias clr="clear"
 alias p="pwd;echo"
+alias dotfiles="cd ~/dotfiles"
 
 # Shortcut to start venv:
 alias start_venv='echo "source venv/bin/activate"; source venv/bin/activate'
