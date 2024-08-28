@@ -4,6 +4,7 @@ alias cdownloads="cd '/mnt/c/Documents and Settings/alei/Downloads'"
 alias clr="clear"
 alias p="pwd;echo"
 alias dotfiles="cd ~/dotfiles"
+alias repos="cd ~/repos"
 
 # Shortcut to start venv:
 alias start_venv='echo "source venv/bin/activate"; source venv/bin/activate'
