@@ -79,6 +79,8 @@ git
 virtualenv
 zsh-autosuggestions 
 zsh-syntax-highlighting
+colored-man-pages
+you-should-use
 )
 
 source $ZSH/oh-my-zsh.sh
