@@ -17,4 +17,4 @@
 #export GEMINI_API_KEY
 
 # RUTER:
-export AWS_PROFILE=assumer
+# export AWS_PROFILE=assumer
