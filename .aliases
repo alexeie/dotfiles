@@ -1,30 +1,65 @@
-alias cdownloads="cd '/mnt/c/Documents and Settings/alei/Downloads'"
-#alias start_docker="source ~/.start_docker"
-#alias pyver="update-alternatives --config python3"
-alias clr="clear"
-alias p="pwd;echo"
-alias dotfiles="cd ~/dotfiles"
-alias repos="cd ~/repos"
+# --------------------
+# Navigation Shortcuts
+# --------------------
+alias cdownloads="cd '/mnt/c/Documents and Settings/alei/Downloads'" # Access Windows downloads folder
+alias clr="clear" # Clear terminal
+alias p="pwd;echo" # Print current working directory
+alias dotfiles="cd ~/dotfiles" # Navigate to dotfiles directory
+alias repos="cd ~/repos" # Navigate to repos directory
+# up n # Command defined as custom function. Move up n steps in directories
+# find-files
+# find-grep 
 
-# Shortcut to start venv:
-alias start_venv='echo "source venv/bin/activate"; source venv/bin/activate'
-alias svenv="source venv/bin/activate"
+# --------------------
+# Configuration Shortcuts
+# --------------------
+alias zshconfig="nano ~/.zshrc" # Edit zsh configuration file
+alias aliascfg="nano ~/.aliases" # Edit aliases file
+alias ohmyzsh="nano ~/.oh-my-zsh" # Edit Oh My Zsh configuration
+# delete-idfiles # Delete idfiles generating when pasting into ubuntu from Windows
+# fix-zsh-history # Fix corrupted history
+# gen_pass n z # Call python function to generate n safe passwords of z characters
 
-alias zshconfig="nano ~/.zshrc"
-alias ohmyzsh="nano ~/.oh-my-zsh"
-alias gs="git status"
-alias la="ls --group-directories-first -Fha"
-alias tf="terraform"
+# --------------------
+# Virtual Environment Shortcuts
+# --------------------
+alias start_venv='echo "source venv/bin/activate"; source venv/bin/activate' # Start virtual environment
+alias svenv="source venv/bin/activate" # Activate virtual environment (assuming it's already set up)
 
-alias t1="tree -a -L 1 --gitignore"
-alias t2="tree -a -L 2 --gitignore"
-alias t3="tree -a -L 3 --gitignore"
+# --------------------
+# Git Shortcuts
+# --------------------
+alias gs="git status" # Check git status
 
-alias tfauth1='echo -e "====\nCOMMAND:\n aws sso login --profile assumer\n====";aws sso login --profile assumer'
-alias tfauth2='echo -e "====\nCOMMAND:\n export AWS_PROFILE=assumer\n====";export AWS_PROFILE=assumer'
-alias tfauth='tfauth1;echo " ";tfauth2'
+# --------------------
+# File/Directory Listing Shortcuts
+# --------------------
+alias la="ls --group-directories-first -Fha" # List files and directories with details
+# hgrep # Search git history for pattern
 
-alias co='echo -e "code .";code .'
-alias tf_debug='export TF_LOG=DEBUG'
-alias tfebugnow='TF_LOG=debug'
-alias tf_warn='export TF_LOG=WARN'
+# --------------------
+# Terraform Shortcuts
+# --------------------
+alias tf="terraform" # Run Terraform
+alias tf_debug='export TF_LOG=DEBUG' # Set Terraform log level to DEBUG
+alias tfdebugnow='TF_LOG=debug' # Set Terraform log level to debug for the current command only
+alias tf_warn='export TF_LOG=WARN' # Set Terraform log level to WARN
+
+# --------------------
+# Tree Command Shortcuts
+# --------------------
+alias t1="tree -a -L 1 --gitignore" # Tree view with depth 1, ignoring .gitignore files
+alias t2="tree -a -L 2 --gitignore" # Tree view with depth 2, ignoring .gitignore files
+alias t3="tree -a -L 3 --gitignore" # Tree view with depth 3, ignoring .gitignore files
+
+# --------------------
+# AWS/Terraform Authentication Shortcuts
+# --------------------
+alias awsauth1='echo -e "====\nCOMMAND:\n aws sso login --profile assumer\n====";aws sso login --profile assumer' # AWS SSO login with profile "assumer"
+alias awsauth2='echo -e "====\nCOMMAND:\n export AWS_PROFILE=assumer\n====";export AWS_PROFILE=assumer' # Set AWS profile to "assumer"
+alias awsauth='awsauth1;echo " ";awsauth2' # Combined AWS authentication steps
+
+# --------------------
+# Code Editor Shortcuts
+# --------------------
+alias co='echo -e "code .";code .' # Open current directory in Visual Studio Code
