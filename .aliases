@@ -40,10 +40,10 @@ alias la="ls --group-directories-first -Fha" # List files and directories with d
 # --------------------
 # Terraform Shortcuts
 # --------------------
-alias tf="terraform" # Run Terraform
+alias tf="terraform"
 alias tf_debug='export TF_LOG=DEBUG' # Set Terraform log level to DEBUG
-alias tfdebugnow='TF_LOG=debug' # Set Terraform log level to debug for the current command only
 alias tf_warn='export TF_LOG=WARN' # Set Terraform log level to WARN
+alias tfdebugnow='TF_LOG=debug' # Log level to debug for current command only
 
 # --------------------
 # Tree Command Shortcuts
