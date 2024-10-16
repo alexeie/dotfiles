@@ -2,6 +2,8 @@
 # Navigation Shortcuts
 # --------------------
 alias cdownloads="cd '/mnt/c/Documents and Settings/alei/Downloads'" # Access Windows downloads folder
+alias cdownloads_dir="/mnt/c/Documents and Settings/alei/Downloads" # Access Windows downloads folder
+alias kh2581downloads_dir="/mnt/c/Documents and Settings/kh2581/Downloads"
 alias clr="clear" # Clear terminal
 alias p="pwd;echo" # Print current working directory
 alias dotfiles="cd ~/dotfiles" # Navigate to dotfiles directory
@@ -63,3 +65,8 @@ alias awsauth='awsauth1;echo " ";awsauth2' # Combined AWS authentication steps
 # Code Editor Shortcuts
 # --------------------
 alias co='echo -e "code .";code .' # Open current directory in Visual Studio Code
+
+# --------------------
+# Docker
+# --------------------
+alias d-stop-all=docker stop $(docker ps -q) # Stop all running containers
