@@ -31,7 +31,13 @@ alias svenv="source venv/bin/activate" # Activate virtual environment (assuming 
 # --------------------
 # Git Shortcuts
 # --------------------
-alias gs="git status" # Check git status
+alias git-shorts='echo "gs, gc, co, gaa, gd, gdc"'
+alias gs='echo "git status";git status'
+alias gc='echo "git commit";git commit'
+alias co='echo "git checkout";git checkout'
+alias gaa='echo "git add -A";git add -A' # Combination of git add . (stages new and modified files) + git add -u (stages modified and deleted files)
+alias gd='echo "git diff";git diff'
+alias gdc='echo "git diff -cached";git diff --cached'
 
 # --------------------
 # File/Directory Listing Shortcuts
@@ -50,21 +56,21 @@ alias tfdebugnow='TF_LOG=debug' # Log level to debug for current command only
 # --------------------
 # Tree Command Shortcuts
 # --------------------
-alias t1="tree -a -L 1 --gitignore" # Tree view with depth 1, ignoring .gitignore files
-alias t2="tree -a -L 2 --gitignore" # Tree view with depth 2, ignoring .gitignore files
-alias t3="tree -a -L 3 --gitignore" # Tree view with depth 3, ignoring .gitignore files
+alias t1='echo "tree -a -L 1 (ignoring .gitignore folders)";tree -a -L 1 --gitignore' # Tree view with depth 1, ignoring .gitignore files
+alias t2='echo "tree -a -L 2 (ignoring .gitignore folders)";tree -a -L 2 --gitignore' # Tree view with depth 2, ignoring .gitignore files
+alias t3='echo "tree -a -L 2 (ignoring .gitignore folders)";tree -a -L 3 --gitignore' # Tree view with depth 3, ignoring .gitignore files
 
 # --------------------
 # AWS/Terraform Authentication Shortcuts
 # --------------------
-alias awsauth1='echo -e "====\nCOMMAND:\n aws sso login --profile assumer\n====";aws sso login --profile assumer' # AWS SSO login with profile "assumer"
-alias awsauth2='echo -e "====\nCOMMAND:\n export AWS_PROFILE=assumer\n====";export AWS_PROFILE=assumer' # Set AWS profile to "assumer"
-alias awsauth='awsauth1;echo " ";awsauth2' # Combined AWS authentication steps
+alias tfauth1='echo -e "====\nCOMMAND:\n aws sso login --profile assumer\n====";aws sso login --profile assumer' # AWS SSO login with profile "assumer"
+alias tfauth2='echo -e "====\nCOMMAND:\n export AWS_PROFILE=assumer\n====";export AWS_PROFILE=assumer' # Set AWS profile to "assumer"
+alias tfauth='tfauth1;echo " ";tfauth2' # Combined AWS authentication steps
 
 # --------------------
 # Code Editor Shortcuts
 # --------------------
-alias co='echo -e "code .";code .' # Open current directory in Visual Studio Code
+# alias co='echo -e "code .";code .' # Open current directory in Visual Studio Code
 
 # --------------------
 # Docker
