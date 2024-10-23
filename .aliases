@@ -36,8 +36,9 @@ alias gs='echo "git status";git status'
 alias gc='echo "git commit";git commit'
 alias co='echo "git checkout";git checkout'
 alias gaa='echo "git add -A";git add -A' # Combination of git add . (stages new and modified files) + git add -u (stages modified and deleted files)
+alias gau='echo "git add -u (Modified and deleted files only, not new files)";git add -u' # Stages modified and deleted file onlys
 alias gd='echo "git diff";git diff'
-alias gdc='echo "git diff -cached";git diff --cached'
+alias gdc='echo "git diff --cached";git diff --cached'
 
 # --------------------
 # File/Directory Listing Shortcuts
