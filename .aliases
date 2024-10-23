@@ -8,6 +8,7 @@ alias clr="clear" # Clear terminal
 alias p="pwd;echo" # Print current working directory
 alias dotfiles="cd ~/dotfiles" # Navigate to dotfiles directory
 alias repos="cd ~/repos" # Navigate to repos directory
+alias sf="cd ~/repos/snowflake"
 # up n # Command defined as custom function. Move up n steps in directories
 # find-files
 # find-grep 
