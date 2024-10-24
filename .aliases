@@ -40,6 +40,8 @@ alias gaa='echo "git add -A";git add -A' # Combination of git add . (stages new 
 alias gau='echo "git add -u (Modified and deleted files only, not new files)";git add -u' # Stages modified and deleted file onlys
 alias gd='echo "git diff";git diff'
 alias gdc='echo "git diff --cached";git diff --cached'
+alias gpu='echo "git pull";git pull'
+alias gcb='function _gcb(){ git checkout -b $(echo "$1" | tr " " "_"); }; _gcb'
 
 # --------------------
 # File/Directory Listing Shortcuts
