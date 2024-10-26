@@ -157,3 +157,26 @@ setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history
 setopt HIST_VERIFY               # Do not execute immediately upon history expansion.
 setopt APPEND_HISTORY            # append to history file
 setopt HIST_NO_STORE             # Don't store history commands
+
+# ### FZF: Fuzzy find ###
+# Set up fzf key bindings and fuzzy completion
+# Add fzf install to readme: 
+# git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+# ~/.fzf/install
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(fzf --zsh)"
+
+# ** to fuzzy search directories
+# cd **/code **/kill -9 **  [+ tab]
+# cd [Ctrl + t] to fuzzy search files and folders
+# sudo apt-get install install fd-find
+export FZF_DEFAULT_COMMAND="fdfind --hidden --strip-cwd-prefix --exclude .git"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fdfind --type-d hidden --strip-cwd-prefix --exclude .git"
+
+_fzf_compgen_path() {
+  fdfind --hidden --exclude .git . "$1"
+}
+_fzf_compgen_dir() {
+  fdfind --type=d --hidden --exclude .git . "$1"
+}

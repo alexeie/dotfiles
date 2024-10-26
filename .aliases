@@ -80,3 +80,8 @@ alias tfauth='tfauth1;echo " ";tfauth2' # Combined AWS authentication steps
 # Docker
 # --------------------
 alias d-stop-all=docker stop $(docker ps -q) # Stop all running containers
+
+# -------------
+# Utilities
+# -------------
+alias bat=batcat
