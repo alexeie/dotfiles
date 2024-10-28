@@ -160,16 +160,13 @@ setopt HIST_NO_STORE             # Don't store history commands
 
 # ### FZF: Fuzzy find ###
 # Set up fzf key bindings and fuzzy completion
-# Add fzf install to readme: 
-# git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-# ~/.fzf/install
+# Get fzf into zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fzf --zsh)"
 
 # ** to fuzzy search directories
 # cd **/code **/kill -9 **  [+ tab]
 # cd [Ctrl + t] to fuzzy search files and folders
-# sudo apt-get install install fd-find
 export FZF_DEFAULT_COMMAND="fdfind --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fdfind --type-d hidden --strip-cwd-prefix --exclude .git"

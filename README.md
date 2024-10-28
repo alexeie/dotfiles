@@ -1,3 +1,4 @@
+
 STOW: Symlink Farm Manager
 https://youtu.be/y6XCebnB9gs?si=fX-j4_bvG81wgrtE
 
@@ -81,3 +82,15 @@ sudo stow .
 ```
 
 # Success
+
+# Install secondary terminal apps:
+Git dependencies:
+```bash
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+```
+
+Other terminal apps:
+```bash
+sudo apt-get install -y fd-find bat
+```
