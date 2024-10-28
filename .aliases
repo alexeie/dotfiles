@@ -35,6 +35,7 @@ alias svenv="source venv/bin/activate" # Activate virtual environment (assuming 
 alias git-shorts='echo "gs, gc, co, gaa, gd, gdc"'
 alias gs='echo "git status";git status'
 alias gc='echo "git commit";git commit'
+alias gc-amend='echo "git commit --amend --no-edit";git commit --amend --no-edit'
 alias co='echo "git checkout";git checkout'
 alias gcb='function _gcb(){ git checkout -b $(echo "$1" | tr " " "_"); }; _gcb'
 alias gaa='echo "git add -A";git add -A' # Combination of git add . (stages new and modified files) + git add -u (stages modified and deleted files)
