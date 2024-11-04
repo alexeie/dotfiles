@@ -81,6 +81,7 @@ zsh-autosuggestions
 zsh-syntax-highlighting
 colored-man-pages
 you-should-use
+fzf-docker
 )
 
 source $ZSH/oh-my-zsh.sh
