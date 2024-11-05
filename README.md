@@ -100,3 +100,10 @@ sudo chmod +x /usr/local/bin/ctop
 # ctop replaces docker ps (-a)
 # https://github.com/bcicen/ctop
 ```
+
+# Docker
+Docker lacks sufficient privileges in ubuntu:
+```bash
+sudo groupadd -f docker
+sudo usermod -aG docker $USER
+```
