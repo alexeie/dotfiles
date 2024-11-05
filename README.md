@@ -94,4 +94,8 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 Other terminal apps:
 ```bash
 sudo apt-get install -y fd-find bat
+# CTOP: Better docker ps output
+sudo wget https://github.com/bcicen/ctop/releases/download/v0.7.1/ctop-0.7.1-linux-amd64  -O /usr/local/bin/ctop
+sudo chmod +x /usr/local/bin/ctop
+# ctop replaces docker ps (-a)
 ```
