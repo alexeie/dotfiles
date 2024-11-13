@@ -86,4 +86,6 @@ alias d-stop-all=docker stop $(docker ps -q) # Stop all running containers
 # Utilities
 # -------------
 alias bat=batcat
-alias kubectl="minikube kubectl --"
+#alias kubectl="minikube kubectl --"
+
+alias awsconfig='nano ~/.aws/config'
