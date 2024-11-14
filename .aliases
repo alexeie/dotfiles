@@ -89,3 +89,4 @@ alias bat=batcat
 #alias kubectl="minikube kubectl --"
 
 alias awsconfig='nano ~/.aws/config'
+alias ncdp='--namespace coredataplatform'
