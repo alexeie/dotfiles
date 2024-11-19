@@ -88,6 +88,11 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# Uncomment the following line to enable command auto-correction.
+ENABLE_CORRECTION="true"
+unsetopt correct_all  
+setopt correct
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
