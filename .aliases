@@ -66,13 +66,6 @@ alias t2='echo "tree -a -L 2 (ignoring .gitignore folders)";tree -a -L 2 --gitig
 alias t3='echo "tree -a -L 2 (ignoring .gitignore folders)";tree -a -L 3 --gitignore' # Tree view with depth 3, ignoring .gitignore files
 
 # --------------------
-# AWS/Terraform Authentication Shortcuts
-# --------------------
-alias tfauth1='echo -e "====\nCOMMAND:\n aws sso login --profile assumer\n====";aws sso login --profile assumer' # AWS SSO login with profile "assumer"
-alias tfauth2='echo -e "====\nCOMMAND:\n export AWS_PROFILE=assumer\n====";export AWS_PROFILE=assumer' # Set AWS profile to "assumer"
-alias tfauth='tfauth1;echo " ";tfauth2' # Combined AWS authentication steps
-
-# --------------------
 # Code Editor Shortcuts
 # --------------------
 # alias co='echo -e "code .";code .' # Open current directory in Visual Studio Code
@@ -86,7 +79,30 @@ alias d-stop-all=docker stop $(docker ps -q) # Stop all running containers
 # Utilities
 # -------------
 alias bat=batcat
-#alias kubectl="minikube kubectl --"
 
+# --------------------
+# AWS/Terraform Authentication Shortcuts
+# --------------------
+alias tfauth1='echo -e "====\nCOMMAND:\n aws sso login --profile assumer\n====";aws sso login --profile assumer' # AWS SSO login with profile "assumer"
+alias tfauth2='echo -e "====\nCOMMAND:\n export AWS_PROFILE=assumer\n====";export AWS_PROFILE=assumer' # Set AWS profile to "assumer"
+alias tfauth='tfauth1;echo " ";tfauth2' # Combined AWS authentication steps
+
+# -------------
+# Kubectl
+# -------------
 alias awsconfig='nano ~/.aws/config'
-alias ncdp='--namespace coredataplatform'
+alias login-dev='aws sso login --profile sso-dev-eks'
+alias login-qa='aws sso login --profile sso-qa-eks'
+
+alias k='kubectl'
+
+alias gnodes='k get nodes'
+alias gpods='k get pods'
+alias gjobs='k get jobs'
+alias gdepl='k get deployments'
+
+alias dpods='k delete pods'
+alias djobs='k delete jobs'
+alias ddepl='k delete deployments'
+
+alias ncdp='-n coredataplatform'
