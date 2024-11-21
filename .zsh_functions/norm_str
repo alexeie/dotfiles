@@ -5,5 +5,6 @@ norm_str() {
   str="${str//$'\n'}"  # Remove ALL newlines with substitution
   str=$(printf "$str" | tr '[:upper:]' '[:lower:]')  # Convert to lowercase
   str=$(printf "$str" | tr -cs '[:alnum:]' '_')   # Replace non-alphanumeric with _
-  echo "$str" 
+  echo "$str"  | clip.exe
+  echo "$str"
 }
