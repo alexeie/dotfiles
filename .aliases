@@ -79,6 +79,7 @@ alias d-stop-all=docker stop $(docker ps -q) # Stop all running containers
 # Utilities
 # -------------
 alias bat=batcat
+alias ns=norm_str
 
 # --------------------
 # AWS/Terraform Authentication Shortcuts
