@@ -91,9 +91,9 @@ alias tfauth='tfauth1;echo " ";tfauth2' # Combined AWS authentication steps
 # -------------
 # Kubectl
 # -------------
-alias awsconfig='nano ~/.aws/config'
-alias login-dev='aws sso login --profile sso-dev-eks'
-alias login-qa='aws sso login --profile sso-qa-eks'
+alias awsconfig='echo -e "~/.aws/config";nano ~/.aws/config'
+alias login-dev='echo -e "aws sso login --profile sso-dev-eks";aws sso login --profile sso-dev-eks'
+alias login-qa='echo -e "aws sso login --profile sso-qa-eks";aws sso login --profile sso-qa-eks'
 
 alias k='kubectl'
 
