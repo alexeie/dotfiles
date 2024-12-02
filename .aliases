@@ -101,6 +101,7 @@ alias gnodes='k get nodes'
 alias gpods='k get pods'
 alias gjobs='k get jobs'
 alias gdepl='k get deployments'
+alias gserv='k get services'
 
 alias dpods='k delete pods'
 alias djobs='k delete jobs'
