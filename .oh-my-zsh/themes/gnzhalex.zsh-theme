@@ -42,4 +42,6 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="› %f"
 #ZSH_THEME_RUBY_PROMPT_PREFIX="%F{red}‹"
 #ZSH_THEME_RUBY_PROMPT_SUFFIX="›%f"
 
+# Add blank line after shell reponse
+precmd() { print "" }
 }

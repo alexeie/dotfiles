@@ -108,3 +108,5 @@ alias djobs='k delete jobs'
 alias ddepl='k delete deployments'
 
 alias ncdp='-n coredataplatform'
+alias gdhpods='echo "kubectl get pods | grep -E datahub|open";gpods | grep -E "datahub|open"'
+alias gdhjobs='echo "kubectl get jobs | grep -E datahub|open";gjobs | grep -E "datahub|open"'
