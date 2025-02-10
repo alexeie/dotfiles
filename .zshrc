@@ -182,3 +182,7 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() {
   fdfind --type=d --hidden --exclude .git . "$1"
 }
+
+
+export PATH="$PATH:/usr/local/bin"
+export OPENAPI_GENERATOR_VERSION=3.0.1

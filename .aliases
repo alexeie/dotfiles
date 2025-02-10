@@ -44,6 +44,9 @@ alias gd='echo "git diff";git diff'
 alias gdc='echo "git diff --cached";git diff --cached'
 alias gpu='echo "git pull";git pull'
 
+# Fetch origin, get new feat branch and switch to the branch
+alias gtr='f() { git fetch origin && git checkout --track "origin/$1"; }; f'
+
 # --------------------
 # File/Directory Listing Shortcuts
 # --------------------
@@ -84,9 +87,16 @@ alias ns=norm_str
 # --------------------
 # AWS/Terraform Authentication Shortcuts
 # --------------------
-alias tfauth1='echo -e "====\nCOMMAND:\n aws sso login --profile assumer\n====";aws sso login --profile assumer' # AWS SSO login with profile "assumer"
+alias tfauth1='echo -e "====\nCOMMAND:\n aws sso login --profile assumer\n====";aws sso login --profile assumer' # AWS SSO login with profile "sso-prod-team-access"
 alias tfauth2='echo -e "====\nCOMMAND:\n export AWS_PROFILE=assumer\n====";export AWS_PROFILE=assumer' # Set AWS profile to "assumer"
 alias tfauth='tfauth1;echo " ";tfauth2' # Combined AWS authentication steps
+# ----- Login to prod specifically:
+alias tfauth_prod1='echo -e "====\nCOMMAND:\n aws sso login --profile sso-prod-team-access\n====";aws sso login --profile sso-prod-team-access' # AWS SSO login with profile "sso-prod-eks"
+alias tfauth_prod2='echo -e "====\nCOMMAND:\n export AWS_PROFILE=sso-prod-team-access\n====";export AWS_PROFILE=sso-prod-team-access' # Set AWS profile to "sso-prod-eks"
+alias tfauth_prod='tfauth_prod1;echo " ";tfauth_prod2' # Combined AWS authentication steps
+
+# Save terraform debug logs aswell as the plan
+# tfplanwdebug= 'TF_LOG=debug terraform plan -out=tfplan.out > tfplan.log 2> tfdebug.log'
 
 # -------------
 # Kubectl
@@ -109,4 +119,13 @@ alias ddepl='k delete deployments'
 
 alias ncdp='-n coredataplatform'
 alias gdhpods='echo "kubectl get pods | grep -E datahub|open";gpods | grep -E "datahub|open"'
+#alias gdhpods_w='watch -n 5 "kubectl get pods | grep -E \"datahub|opensearch\""'
+alias gdhpods_w='f(){ interval=5; [ $# -ge 1 ] && interval="$1"; watch -n "$interval" "kubectl get pods | grep -E \"datahub|opensearch\""; }; f'
+
 alias gdhjobs='echo "kubectl get jobs | grep -E datahub|open";gjobs | grep -E "datahub|open"'
+alias gdhjobs_w='echo "kubectl get jobs | grep -E datahub|open --watch";gjobs --watch| grep -E "datahub|open"'
+alias kdeletefailedpods='echo "kubectl delete pods -n coredataplatform --field-selector status.phase=Failed";kubectl delete pods -n coredataplatform --field-selector status.phase=Failed'
+alias kdeletefailedjobs='echo "kubectl delete jobs -n coredataplatform --field-selector status.failed=1";kubectl delete jobs -n coredataplatform --field-selector status.failed=1'
+
+# Initiate python dir
+alias init-py="echo 'Initiating new python directory...\ngit init + pyenv setup + venv + py .gitignore';git init && pyenv local 3.12.4 && python3 -m venv venv && wget https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore -O .gitignore && touch main.py"
