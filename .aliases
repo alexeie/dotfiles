@@ -60,6 +60,7 @@ alias tf="terraform"
 alias tf_debug='export TF_LOG=DEBUG' # Set Terraform log level to DEBUG
 alias tf_warn='export TF_LOG=WARN' # Set Terraform log level to WARN
 alias tfdebugnow='TF_LOG=debug' # Log level to debug for current command only
+alias enable_tflogs='export TF_LOG_PATH="tmp/terraform.log"'
 
 # --------------------
 # Tree Command Shortcuts

@@ -1,4 +1,5 @@
 # Based on bira theme
+# Requires terraform plugin
 
 setopt prompt_subst
 
@@ -35,7 +36,8 @@ local venv_name='$(virtualenv_prompt_info)'
 
 PROMPT="${user_host} ${current_dir} \${git_branch} ${venv_name}
 $PR_PROMPT "
-RPROMPT="${return_code}"
+#RPROMPT="${return_code}" TF:$(tf_prompt_info)
+#RPROMPT="$(tf_version_prompt_info)"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%F{yellow}‹"
 ZSH_THEME_GIT_PROMPT_SUFFIX="› %f"
