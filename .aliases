@@ -59,8 +59,11 @@ alias la="ls --group-directories-first -Fha" # List files and directories with d
 alias tf="terraform"
 alias tf_debug='export TF_LOG=DEBUG' # Set Terraform log level to DEBUG
 alias tf_warn='export TF_LOG=WARN' # Set Terraform log level to WARN
+alias tf_info='export TF_LOG=INFO' # Set Terraform log level to INFO
 alias tfdebugnow='TF_LOG=debug' # Log level to debug for current command only
-alias enable_tflogs='export TF_LOG_PATH="tmp/terraform.log"'
+alias tflogs_info='tf_info;export TF_LOG_PATH="tmp/terraform.log"'
+alias tflogs_warn='tf_warn;export TF_LOG_PATH="tmp/terraform.log"'
+alias tflogs_debug='tf_debug;export TF_LOG_PATH="tmp/terraform.log"'
 
 # --------------------
 # Tree Command Shortcuts

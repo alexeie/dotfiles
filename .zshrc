@@ -21,12 +21,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="tjkirch"
 # ZSH_THEME="gnzhalex"
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -50,9 +44,6 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -84,12 +75,12 @@ HIST_STAMPS="dd.mm.yyyy"
 plugins=(
 git
 virtualenv
-zsh-autosuggestions
-zsh-syntax-highlighting
 colored-man-pages
 you-should-use
 fzf-docker
 terraform
+zsh-syntax-highlighting
+zsh-autosuggestions
 )
 
 # ZSH_THEME="gnzhalex2"
@@ -102,20 +93,13 @@ source $ZSH/oh-my-zsh.sh
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
-unsetopt correct_all  
+unsetopt correct_all
 setopt correct
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -125,10 +109,6 @@ setopt correct
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #source .aliases
-
-#export PATH="$HOME/.pyenv/bin:$PATH"
-#eval "$(pyenv init -)"
-#eval "$(pyenv virtualenv-init -)"
 
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
@@ -197,7 +177,7 @@ _fzf_compgen_dir() {
 
 
 #export PATH="$PATH:/usr/local/bin"
-export OPENAPI_GENERATOR_VERSION=3.0.1
+#export OPENAPI_GENERATOR_VERSION=3.0.1
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
