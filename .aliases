@@ -98,6 +98,7 @@ alias tfauth='tfauth1;echo " ";tfauth2' # Combined AWS authentication steps
 alias tfauth_prod1='echo -e "====\nCOMMAND:\n aws sso login --profile sso-prod-team-access\n====";aws sso login --profile sso-prod-team-access' # AWS SSO login with profile "sso-prod-eks"
 alias tfauth_prod2='echo -e "====\nCOMMAND:\n export AWS_PROFILE=sso-prod-team-access\n====";export AWS_PROFILE=sso-prod-team-access' # Set AWS profile to "sso-prod-eks"
 alias tfauth_prod='tfauth_prod1;echo " ";tfauth_prod2' # Combined AWS authentication steps
+# export AWS_PROFILE=sso-dev-team-access
 
 # Save terraform debug logs aswell as the plan
 # tfplanwdebug= 'TF_LOG=debug terraform plan -out=tfplan.out > tfplan.log 2> tfdebug.log'

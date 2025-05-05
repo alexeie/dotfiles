@@ -37,8 +37,15 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/plugins/you-should-use
 git clone https://github.com/fdellwing/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
 git clone https://github.com/pierpo/fzf-docker $ZSH_CUSTOM/plugins/fzf-docker
+```
+
+# Make url's auto-open in browser:
+```bash
+sudo apt install wslu
+```
 
 # Backup virtualenv original file to make room for symbolic link:
+```bash
 mv ~/.oh-my-zsh/plugins/virtualenv/virtualenv.plugin.zsh ./.oh-my-zsh/plugins/virtualenv/virtualenv.plugin.zsh.bak 
 ```
 
