@@ -181,3 +181,11 @@ _fzf_compgen_dir() {
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+export PATH=$HOME/.tofuenv/bin:$PATH
+export GOPATH=~/go
+
+export PATH="/usr/local/bin:$PATH"autoload -U +X compinit
+compinit
+autoload -U +X bashcompinit
+bashcompinit
+complete -o nospace -C /usr/local/bin/scalr scalr

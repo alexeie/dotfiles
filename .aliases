@@ -109,6 +109,7 @@ alias tfauth_prod='tfauth_prod1;echo " ";tfauth_prod2' # Combined AWS authentica
 alias awsconfig='echo -e "~/.aws/config";nano ~/.aws/config'
 alias awslogin-dev='echo -e "aws sso login --profile sso-dev-eks";aws sso login --profile sso-dev-eks'
 alias awslogin-qa='echo -e "aws sso login --profile sso-qa-eks";aws sso login --profile sso-qa-eks'
+alias awslogin-prod='echo -e "aws sso login --profile sso-prod-eks";aws sso login --profile sso-prod-eks'
 
 alias k='kubectl'
 
