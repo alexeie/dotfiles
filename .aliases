@@ -43,6 +43,8 @@ alias gau='echo "git add -u (Modified and deleted files only, not new files)";gi
 alias gd='echo "git diff";git diff'
 alias gdc='echo "git diff --cached";git diff --cached'
 alias gpu='echo "git pull";git pull'
+alias gbl='git branch --sort=-committerdate | head -5'
+alias gbla='git branch --sort=-committerdate'
 
 # Fetch origin, get new feat branch and switch to the branch
 alias gtr='f() { git fetch origin && git checkout --track "origin/$1"; }; f'
@@ -76,6 +78,8 @@ alias t3='echo "tree -a -L 2 (ignoring .gitignore folders)";tree -a -L 3 --gitig
 # Code Editor Shortcuts
 # --------------------
 # alias co='echo -e "code .";code .' # Open current directory in Visual Studio Code
+alias antigravity_wsl='/usr/bin/antigravity'
+alias anti=antigravity
 
 # --------------------
 # Docker
@@ -87,6 +91,7 @@ alias d-stop-all=docker stop $(docker ps -q) # Stop all running containers
 # -------------
 alias bat=batcat
 alias ns=norm_str
+alias id="/mnt/c/Users/kh2581/AppData/Local/JetBrains/IntelliJ\ IDEA\ Community\ Edition\ 2022.3.3/bin/idea64.exe"
 
 # --------------------
 # AWS/Terraform Authentication Shortcuts
@@ -135,3 +140,6 @@ alias kdeletefailedjobs='echo "kubectl delete jobs -n coredataplatform --field-s
 
 # Initiate python dir
 alias init-py="echo 'Initiating new python directory...\ngit init + pyenv setup + venv + py .gitignore';git init && pyenv local 3.12.4 && python3 -m venv venv && wget https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore -O .gitignore && touch main.py"
+
+alias c='clear'
+alias C='clear'

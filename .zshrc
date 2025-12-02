@@ -131,7 +131,6 @@ autoload -Uz t
 autoload -Uz ta
 autoload -Uz hgrep # grep history for similar historical command
 autoload -Uz find-grep
-autoload -Uz git-push-new # Not working yet, wip. Push  new local git branch directly without the extra set-upstream  command
 autoload -Uz fix-zsh-history # Fixes corrupted zsh history
 autoload -Uz norm_str # Takes string as input, replaces all symbols and spaces with underscores
 
@@ -184,8 +183,21 @@ _fzf_compgen_dir() {
 export PATH=$HOME/.tofuenv/bin:$PATH
 export GOPATH=~/go
 
-export PATH="/usr/local/bin:$PATH"autoload -U +X compinit
+export PATH="/usr/local/bin:$PATH"
+autoload -U +X compinit
 compinit
 autoload -U +X bashcompinit
 bashcompinit
 complete -o nospace -C /usr/local/bin/scalr scalr
+
+# Searches recursively, ignoring common junk directories
+sgrep() {
+  # We use "$1" to pass the first argument (your search term)
+  # We also use multiple --exclude-dir flags, as brace expansion won't work here.
+  grep -ril --exclude-dir=".git" --exclude-dir="*venv*" --exclude-dir="*terraform*" "$1" .
+}
+
+# Suppress annoying warning to use windowes version of antigravity
+export DONT_PROMPT_WSL_INSTALL=1
+
+. "$HOME/.local/bin/env"

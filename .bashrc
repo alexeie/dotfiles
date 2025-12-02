@@ -119,3 +119,5 @@ source ~/.github_auth
 ## export DFO_RAW_ST_URL=test
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+. "$HOME/.local/bin/env"
