@@ -201,3 +201,6 @@ sgrep() {
 export DONT_PROMPT_WSL_INSTALL=1
 
 . "$HOME/.local/bin/env"
+
+# Use global gitignore file
+# git config --global core.excludesfile ~/.gitignore_global
