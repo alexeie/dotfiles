@@ -9,7 +9,7 @@ echo "Installing system dependencies..."
 sudo apt update
 sudo apt install -y zsh git curl wget fd-find unzip build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev llvm libncursesw5-dev xz-utils tk-dev \
-libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev stow
 
 # 2. Install Oh-My-Zsh (Unattended)
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
@@ -65,4 +65,29 @@ if [ "$SHELL" != "$(which zsh)" ]; then
   chsh -s $(which zsh)
 fi
 
-echo "Setup complete! Now run: stow zsh"
+# 9. Prep for Stow (Remove OMZ default config to avoid conflict)
+if [ -f "$HOME/.zshrc" ]; then
+    echo "Backing up default .zshrc to .zshrc.bak..."
+    mv "$HOME/.zshrc" "$HOME/.zshrc.bak"
+fi
+
+# 10. Run Stow
+# Sjekk at dotfiles-mappen faktisk er der vi tror den er
+DOTFILES_DIR="$HOME/dotfiles"
+
+if [ -d "$DOTFILES_DIR" ]; then
+    echo "Applying dotfiles with stow..."
+    cd "$DOTFILES_DIR"
+
+    # Stow zsh configuration
+    stow zsh
+
+    # Stow git configuration (hvis du har en mappe for det)
+    stow git
+
+    echo "Stow complete."
+else
+    echo "WARNING: $DOTFILES_DIR not found. Skipping stow."
+fi
+
+echo "Setup fully complete! Please restart your terminal."
