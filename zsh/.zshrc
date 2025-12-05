@@ -5,6 +5,7 @@ fi
 
 # --- Environment & Path ---
 export ZSH="$HOME/.oh-my-zsh"
+export ZSH_CUSTOM="$HOME/dotfiles/oh-my-zsh/custom"
 export PYENV_ROOT="$HOME/.pyenv"
 # Added .fzf/bin to the path so the system finds the command
 export PATH="$PYENV_ROOT/bin:$PATH:$HOME/.tfenv/bin:$HOME/.fzf/bin:/usr/bin/dot"
