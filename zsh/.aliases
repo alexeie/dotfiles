@@ -84,7 +84,7 @@ alias anti=antigravity
 # --------------------
 # Docker
 # --------------------
-alias d-stop-all=docker stop $(docker ps -q) # Stop all running containers
+#alias d-stop-all=docker stop $(docker ps -q) # Stop all running containers
 
 # -------------
 # Utilities

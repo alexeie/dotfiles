@@ -17,3 +17,6 @@
 [submodule "oh-my-zsh/custom/plugins/fzf-docker"]
 	path = oh-my-zsh/custom/plugins/fzf-docker
 	url = https://github.com/pierpo/fzf-docker
+[submodule "external/fzf"]
+	path = fzf/.fzf
+	url = https://github.com/junegunn/fzf.git

@@ -4,12 +4,18 @@
 # 2. chmod +x ~/dotfiles/setup.sh && ~/dotfiles/setup.sh
 # 3. cd ~/dotfiles; stow zsh; stow git
 
+# --- Configuration ---
+# Automatically get the folder where this script is located
+DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
+FONTS_DIR="$HOME/.local/share/fonts"
+
 # 1. Update and Install System Dependencies (Ubuntu)
 echo "Installing system dependencies..."
 sudo apt update
 sudo apt install -y zsh git curl wget fd-find unzip build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev llvm libncursesw5-dev xz-utils tk-dev \
-libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev stow
+libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev stow fontconfig
 
 # 2. Install Oh-My-Zsh (Unattended)
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
@@ -52,42 +58,61 @@ if [ ! -d "$HOME/.tfenv" ]; then
   git clone --depth=1 https://github.com/tfutils/tfenv.git ~/.tfenv
 fi
 
-# 7. Install FZF (Git method to match your config)
-if [ ! -d "$HOME/.fzf" ]; then
-  echo "Installing FZF..."
-  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-  ~/.fzf/install --all --no-update-rc
+# 8. Install Nerd Fonts (MesloLGS NF for Powerlevel10k)
+FONT_DIR="$HOME/.local/share/fonts"
+if [ ! -d "$FONT_DIR" ]; then
+    mkdir -p "$FONT_DIR"
 fi
 
-# 8. Set Default Shell to Zsh
-if [ "$SHELL" != "$(which zsh)" ]; then
-  echo "Changing default shell to zsh..."
-  chsh -s $(which zsh)
+# Only download if not already present
+if [ ! -f "$FONT_DIR/MesloLGS NF Regular.ttf" ]; then
+    echo "Downloading MesloLGS NF fonts..."
+    wget -P "$FONT_DIR" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
+    wget -P "$FONT_DIR" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
+    wget -P "$FONT_DIR" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
+    wget -P "$FONT_DIR" https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
+    
+    echo "Refreshing font cache..."
+    fc-cache -fv
+else 
+    echo "Fonts already installed."
 fi
 
-# 9. Prep for Stow (Remove OMZ default config to avoid conflict)
-if [ -f "$HOME/.zshrc" ]; then
-    echo "Backing up default .zshrc to .zshrc.bak..."
-    mv "$HOME/.zshrc" "$HOME/.zshrc.bak"
-fi
-
-# 10. Run Stow
-# Sjekk at dotfiles-mappen faktisk er der vi tror den er
-DOTFILES_DIR="$HOME/dotfiles"
-
+# --- 9. Apply Dotfiles with Stow ---
 if [ -d "$DOTFILES_DIR" ]; then
-    echo "Applying dotfiles with stow..."
+    echo "🔗 Applying dotfiles..."
     cd "$DOTFILES_DIR"
 
-    # Stow zsh configuration
+    # A. Pull Submodules (CRITICAL for FZF)
+    echo "   - Initializing git submodules..."
+    git submodule update --init --recursive
+
+    # B. Backup existing config to prevent conflicts
+    [ -f "$HOME/.zshrc" ] && [ ! -L "$HOME/.zshrc" ] && mv "$HOME/.zshrc" "$HOME/.zshrc.bak"
+    [ -f "$HOME/.gitconfig" ] && [ ! -L "$HOME/.gitconfig" ] && mv "$HOME/.gitconfig" "$HOME/.gitconfig.bak"
+
+    # C. Run Stow
     stow zsh
+    
+    # Stow FZF (Links dotfiles/fzf/.fzf -> ~/.fzf)
+    # The '2>/dev/null' silences errors if it's already linked
+    stow fzf 2>/dev/null || true
 
-    # Stow git configuration (hvis du har en mappe for det)
-    stow git
+    # Uncomment if you have a git folder
+    # stow git
 
-    echo "Stow complete."
+    echo "✅ Stow complete."
 else
-    echo "WARNING: $DOTFILES_DIR not found. Skipping stow."
+    echo "❌ Error: Dotfiles directory not found at $DOTFILES_DIR"
+    exit 1
 fi
 
-echo "Setup fully complete! Please restart your terminal."
+# --- 10. Compile FZF Binary ---
+# Since we stowed fzf, ~/.fzf is now a symlink to your submodule.
+# We must compile the binary so the executable exists.
+if [ -d "$HOME/.fzf" ]; then
+    echo "⚙️ Compiling FZF binary..."
+    "$HOME/.fzf/install" --bin --no-update-rc
+fi
+
+echo "🎉 Setup complete! Restart your terminal to see changes."
