@@ -10,6 +10,15 @@ export PYENV_ROOT="$HOME/.pyenv"
 # Added .fzf/bin to the path so the system finds the command
 export PATH="$PYENV_ROOT/bin:$HOME/.fzf/bin:$HOME/.tfenv/bin:$PATH"
 
+# --- 1Password SSH Agent (Conditional) ---
+# We define the path to the 1Password socket
+_1PASS_SOCK="$HOME/.1password/agent.sock"
+
+# Only export the variable if the socket actually exists
+if [ -S "$_1PASS_SOCK" ]; then
+    export SSH_AUTH_SOCK="$_1PASS_SOCK"
+fi
+
 # Initialize Pyenv (fail silently if not found)
 command -v pyenv >/dev/null && eval "$(pyenv init --path)" && eval "$(pyenv init -)"
 
