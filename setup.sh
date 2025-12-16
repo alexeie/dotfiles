@@ -15,7 +15,7 @@ echo "Installing system dependencies..."
 sudo apt update
 sudo apt install -y zsh git curl wget fd-find unzip build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev llvm libncursesw5-dev xz-utils tk-dev \
-libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev stow fontconfig
+libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev stow fontconfig bat
 
 # 2. Install Oh-My-Zsh (Unattended)
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
