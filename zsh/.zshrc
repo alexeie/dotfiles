@@ -10,6 +10,12 @@ export PYENV_ROOT="$HOME/.pyenv"
 # Added .fzf/bin to the path so the system finds the command
 export PATH="$PYENV_ROOT/bin:$HOME/.fzf/bin:$HOME/.tfenv/bin:$PATH"
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/alex/temp/google-cloud-sdk/path.zsh.inc' ]; then . '/home/alex/temp/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/alex/temp/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/alex/temp/google-cloud-sdk/completion.zsh.inc'; fi
+
 # --- 1Password SSH Agent (Conditional) ---
 # We define the path to the 1Password socket
 _1PASS_SOCK="$HOME/.1password/agent.sock"
