@@ -21,7 +21,6 @@ HIST_STAMPS="dd.mm.yyyy"
 # --- Plugins ---
 plugins=(
   git
-  virtualenv
   colored-man-pages
   you-should-use
   fzf-docker
@@ -34,6 +33,8 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # --- User Configuration (Post-OMZ) ---
+
+eval "$(uv generate-shell-completion zsh)"
 
 # 1. Aliases & Locals
 [ -f ~/.aliases ] && source ~/.aliases

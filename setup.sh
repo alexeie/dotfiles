@@ -17,13 +17,20 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 fi
 
+# 2. Fix the .zshrc conflict
+# The OMZ installer creates a .zshrc. We delete it so Stow can replace it with our link.
+if [ -f "$HOME/.zshrc" ] && [ ! -L "$HOME/.zshrc" ]; then
+  echo "Removing default .zshrc to make room for Stow link..."
+  rm "$HOME/.zshrc"
+fi
+
 # 3. Install Powerlevel10k
 if [ ! -d "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" ]; then
   echo "Installing Powerlevel10k..."
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 fi
 
-# 4. Install External Zsh Plugins
+# x. Install External Zsh Plugins
 PLUGIN_DIR=${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins
 
 check_plugin() {
@@ -40,26 +47,26 @@ check_plugin "zsh-syntax-highlighting" "https://github.com/zsh-users/zsh-syntax-
 check_plugin "you-should-use" "https://github.com/MichaelAquilina/zsh-you-should-use.git"
 check_plugin "fzf-docker" "https://github.com/pierpo/fzf-docker.git"
 
-# 5. Install Pyenv
+# x. Install Pyenv
 if [ ! -d "$HOME/.pyenv" ]; then
   echo "Installing Pyenv..."
   curl https://pyenv.run | bash
 fi
 
-# 6. Install Tfenv (Terraform Manager)
+# x. Install Tfenv (Terraform Manager)
 if [ ! -d "$HOME/.tfenv" ]; then
   echo "Installing Tfenv..."
   git clone --depth=1 https://github.com/tfutils/tfenv.git ~/.tfenv
 fi
 
-# 7. Install FZF (Git method to match your config)
+# x. Install FZF (Git method to match your config)
 if [ ! -d "$HOME/.fzf" ]; then
   echo "Installing FZF..."
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
   ~/.fzf/install --all --no-update-rc
 fi
 
-# 8. Set Default Shell to Zsh
+# x. Set Default Shell to Zsh
 if [ "$SHELL" != "$(which zsh)" ]; then
   echo "Changing default shell to zsh..."
   chsh -s $(which zsh)
