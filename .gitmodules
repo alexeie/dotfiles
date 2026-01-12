@@ -1,4 +1,4 @@
-[submodule ".zsh_functions/generate_password"]
-	path = .zsh_functions/generate_password
-	url = https://github.com/alexeie/generate_password.git
-	branch = main
+[submodule "zsh/.zsh_functions/generate_password"]
+    path = zsh/.zsh_functions/generate_password
+    url = https://github.com/alexeie/generate_password.git
+    branch = main
