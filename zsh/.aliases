@@ -8,7 +8,7 @@ alias clr="clear" # Clear terminal
 alias p="pwd;echo" # Print current working directory
 alias dotfiles="cd ~/dotfiles" # Navigate to dotfiles directory
 alias repos="cd ~/repos" # Navigate to repos directory
-alias sf="cd ~/repos/snowflake"
+alias sf="cd ~/repos/ruter-as/cdp/snowflake"
 # up n # Command defined as custom function. Move up n steps in directories
 # find-files
 # find-grep 
@@ -84,7 +84,7 @@ alias anti=antigravity
 # --------------------
 # Docker
 # --------------------
-alias d-stop-all=docker stop $(docker ps -q) # Stop all running containers
+#alias d-stop-all=docker stop $(docker ps -q) # Stop all running containers
 
 # -------------
 # Utilities

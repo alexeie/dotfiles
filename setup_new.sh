@@ -30,7 +30,7 @@ fi
 
 echo "📦 Installing core tools (Git, Stow, FZF, UV)..."
 # Added 'uv' here to replace virtualenv workflow
-brew install git stow fzf uv
+brew install git stow fzf uv autojump
 
 # --- 4. SUBMODULE INITIALIZATION ---
 

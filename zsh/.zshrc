@@ -10,7 +10,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH:$HOME/.tfenv/bin:$HOME/.fzf/bin:/usr/bin/dot"
 
 # Initialize Pyenv (fail silently if not found)
-command -v pyenv >/dev/null && eval "$(pyenv init --path)" && eval "$(pyenv init -)"
+#command -v pyenv >/dev/null && eval "$(pyenv init --path)" && eval "$(pyenv init -)"
 
 # --- OMZ Settings ---
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -22,7 +22,6 @@ HIST_STAMPS="dd.mm.yyyy"
 plugins=(
   git
   colored-man-pages
-  you-should-use
   fzf-docker
   terraform
   zsh-syntax-highlighting
@@ -35,6 +34,8 @@ source $ZSH/oh-my-zsh.sh
 # --- User Configuration (Post-OMZ) ---
 
 eval "$(uv generate-shell-completion zsh)"
+
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
 # 1. Aliases & Locals
 [ -f ~/.aliases ] && source ~/.aliases
@@ -72,12 +73,12 @@ _fzf_compgen_dir() { fdfind --type=d --hidden --exclude .git . "$1"; }
 
 # Initialize FZF
 # We check if the manual config exists first.
-if [ -f "$HOME/.fzf.zsh" ]; then
-  source "$HOME/.fzf.zsh"
-elif command -v fzf >/dev/null; then
+#if [ -f "$HOME/.fzf.zsh" ]; then
+#  source "$HOME/.fzf.zsh"
+#elif command -v fzf >/dev/null; then
   # Fallback for system install (only works on very new FZF versions)
-  eval "$(fzf --zsh 2>/dev/null)" || true
-fi
+#  eval "$(fzf --zsh 2>/dev/null)" || true
+#fi
 
 # --- Powerlevel10k Config ---
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
