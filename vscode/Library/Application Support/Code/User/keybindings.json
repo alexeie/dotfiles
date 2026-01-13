@@ -1,0 +1,19 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+    "key": "alt+'",
+    "command": "type",
+    "args": { "text": "|" },
+    "when": "editorTextFocus"
+},
+{
+    "key": "ctrl+[Backslash]",
+    "command": "editor.action.addCommentLine",
+    "when": "editorTextFocus && !editorReadonly"
+},
+{
+    "key": "cmd+k cmd+c",
+    "command": "-editor.action.addCommentLine",
+    "when": "editorTextFocus && !editorReadonly"
+}
+]
