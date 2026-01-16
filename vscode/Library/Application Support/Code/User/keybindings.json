@@ -5,15 +5,19 @@
     "command": "type",
     "args": { "text": "|" },
     "when": "editorTextFocus"
-},
-{
-    "key": "ctrl+[Backslash]",
-    "command": "editor.action.addCommentLine",
-    "when": "editorTextFocus && !editorReadonly"
-},
-{
-    "key": "cmd+k cmd+c",
-    "command": "-editor.action.addCommentLine",
-    "when": "editorTextFocus && !editorReadonly"
-}
+    },
+    { 
+    "key": "cmd+[Backquote]", 
+    "command": "editor.action.commentLine", 
+    "when": "editorTextFocus" 
+    },
+    {
+    "key": "cmd+shift+f",
+    "command": "workbench.action.closeSidebar",
+    "when": "searchViewletFocus"
+    }
+    {
+    "key": "cmd+b",
+    "command": "workbench.action.toggleSidebarVisibility"
+    }
 ]
