@@ -4,5 +4,18 @@
     "explorer.confirmDelete": false,
     "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
     "terminal.integrated.fontSize": 11,
-    "editor.experimentalGpuAcceleration": "on"
+    "editor.experimentalGpuAcceleration": "on",
+    "claudeCode.hideOnboarding": true,
+    "claudeCode.useTerminal": false,
+    "editor.stickyScroll.enabled": false,
+    "claudeCode.preferredLocation": "panel",
+    "claudeCode.environmentVariables": [
+
+        { "name": "AWS_PROFILE", "value": "claude-code-eu-north-1" },
+        { "name": "AWS_REGION",  "value": "eu-north-1" },
+        { "name": "CLAUDE_CODE_USE_BEDROCK", "value": "1" }
+    ],
+    // "claudeCode.selectedModel": "eu.anthropic.claude-haiku-4-5-20251001-v1:0"
+    // "claudeCode.selectedModel": "eu.anthropic.claude-sonnet-4-5-20250929-v1:0"
+    "claudeCode.selectedModel": "eu.anthropic.claude-sonnet-4-6"
 }

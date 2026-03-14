@@ -1,0 +1,46 @@
+# Switch between Claude Code settings profiles
+#
+# Arguments:
+#   (none)    - Show currently active profile
+#   privat    - Switch to personal Claude (direct Anthropic API)
+#   tet       - Switch to company Claude (AWS Bedrock)
+#
+# Usage:
+#   claude-profile
+#   claude-profile privat
+#   claude-profile tet
+
+claude-profile() {
+  local claude_dir="$HOME/.claude"
+  local settings="$claude_dir/settings.json"
+  local privat="$claude_dir/settings-privat.json"
+  local tet="$claude_dir/settings-tet.json"
+
+  if [[ $# -eq 0 ]]; then
+    if diff -q "$settings" "$privat" > /dev/null 2>&1; then
+      echo "Active Claude profile: privat (personal)"
+    elif diff -q "$settings" "$tet" > /dev/null 2>&1; then
+      echo "Active Claude profile: tet (company/Bedrock)"
+    else
+      echo "Active Claude profile: custom (does not match privat or tet)"
+    fi
+    return 0
+  fi
+
+  case "$1" in
+    privat)
+      cp "$privat" "$settings"
+      echo "Switched to Claude profile: privat (personal)"
+      ;;
+    tet)
+      cp "$tet" "$settings"
+      echo "Switched to Claude profile: tet (company/Bedrock)"
+      ;;
+    *)
+      echo "Usage: claude-profile [privat|tet]"
+      echo "  privat  - Personal Claude (direct Anthropic API)"
+      echo "  tet     - Company Claude (AWS Bedrock)"
+      return 1
+      ;;
+  esac
+}

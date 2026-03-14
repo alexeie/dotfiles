@@ -22,6 +22,7 @@ alias ohmyzsh="nano ~/.oh-my-zsh" # Edit Oh My Zsh configuration
 # delete-idfiles # Delete idfiles generating when pasting into ubuntu from Windows
 # fix-zsh-history # Fix corrupted history
 # gen_pass n z # Call python function to generate n safe passwords of z characters
+# claude-profile [privat|tet] # Switch Claude Code settings profile
 
 # --------------------
 # Virtual Environment Shortcuts
@@ -89,7 +90,7 @@ alias anti=antigravity
 # -------------
 # Utilities
 # -------------
-alias bat=batcat
+#alias bat=batcat
 alias ns=norm_str
 alias id="/mnt/c/Users/kh2581/AppData/Local/JetBrains/IntelliJ\ IDEA\ Community\ Edition\ 2022.3.3/bin/idea64.exe"
 
