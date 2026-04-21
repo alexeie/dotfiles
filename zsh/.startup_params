@@ -2,7 +2,6 @@
 #setopt kshglob  # Enable globbing of dotfiles
 
 # To change python version:
-# update-alternatives --config python3
 # System monitors: htop | gtop | bashtop
 
 # Set google credentials
@@ -18,3 +17,4 @@
 
 # RUTER:
 # export AWS_PROFILE=assumer
+export SNOWFLAKE_USER="alexander.eieland@tetdigital.no"

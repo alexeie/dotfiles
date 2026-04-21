@@ -3,7 +3,6 @@
     "files.autoSave": "afterDelay",
     "explorer.confirmDelete": false,
     "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
-    "terminal.integrated.fontSize": 11,
     "editor.experimentalGpuAcceleration": "on",
     "claudeCode.hideOnboarding": true,
     "claudeCode.useTerminal": false,
@@ -17,5 +16,8 @@
     ],
     // "claudeCode.selectedModel": "eu.anthropic.claude-haiku-4-5-20251001-v1:0"
     // "claudeCode.selectedModel": "eu.anthropic.claude-sonnet-4-5-20250929-v1:0"
-    "claudeCode.selectedModel": "eu.anthropic.claude-sonnet-4-6"
+    "claudeCode.selectedModel": "eu.anthropic.claude-sonnet-4-6",
+    "python.analysis.typeCheckingMode": "standard",
+    "terminal.integrated.cursorWidth": 2,
+    "terminal.integrated.fontSize": 13
 }
