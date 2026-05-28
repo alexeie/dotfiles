@@ -19,5 +19,8 @@
     "claudeCode.selectedModel": "eu.anthropic.claude-sonnet-4-6",
     "python.analysis.typeCheckingMode": "standard",
     "terminal.integrated.cursorWidth": 2,
-    "terminal.integrated.fontSize": 13
+    "terminal.integrated.fontSize": 13,
+    "workbench.tree.indent": 20,
+    "workbench.tree.renderIndentGuides": "always",
+    "workbench.tree.indentGuidesStroke": "#5a5a5a"
 }
