@@ -22,7 +22,7 @@ alias ohmyzsh="nano ~/.oh-my-zsh" # Edit Oh My Zsh configuration
 # delete-idfiles # Delete idfiles generating when pasting into ubuntu from Windows
 # fix-zsh-history # Fix corrupted history
 # gen_pass n z # Call python function to generate n safe passwords of z characters
-# claude-profile [privat|tet] # Switch Claude Code settings profile
+# claude-profile [privat|tet] [args...] # Launch Claude Code with a specific settings profile
 
 # --------------------
 # Virtual Environment Shortcuts
