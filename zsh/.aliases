@@ -23,6 +23,8 @@ alias ohmyzsh="nano ~/.oh-my-zsh" # Edit Oh My Zsh configuration
 # fix-zsh-history # Fix corrupted history
 # gen_pass n z # Call python function to generate n safe passwords of z characters
 # claude-profile [privat|tet] [args...] # Launch Claude Code with a specific settings profile
+alias claude-priv='claude-profile privat'
+alias claude-tet='claude-profile tet'
 
 # --------------------
 # Virtual Environment Shortcuts
