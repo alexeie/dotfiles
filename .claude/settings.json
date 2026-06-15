@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "statusLine": {
+    "type": "command",
+    "command": "bash \"/Users/alex/.claude/statusline-command.sh\""
+  },
+  "enabledPlugins": {
+    "caveman@caveman": true
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/opt/homebrew/bin/node \"/Users/alex/.claude/hooks/caveman-activate.js\"",
+            "timeout": 5,
+            "statusMessage": "Loading caveman mode..."
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/opt/homebrew/bin/node \"/Users/alex/.claude/hooks/caveman-mode-tracker.js\"",
+            "timeout": 5,
+            "statusMessage": "Tracking caveman mode..."
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Read",
+      "Edit",
+      "MultiEdit",
+      "Write",
+      "Glob",
+      "Grep",
+      "LS",
+      "Read(**/*.md)",
+      "Read(**/*.txt)",
+      "Read(**/*.json)",
+      "Read(**/*.js)",
+      "Read(**/*.ts)",
+      "Read(**/*.py)",
+      "Read(**/*.java)",
+      "Read(**/*.go)",
+      "Read(**/*.rs)",
+      "Write(**/*.md)",
+      "Write(**/*.txt)",
+      "Write(**/*.json)",
+      "Write(**/*.js)",
+      "Write(**/*.ts)",
+      "Write(**/*.py)",
+      "Write(**/*.java)",
+      "Write(**/*.go)",
+      "Write(**/*.rs)",
+      "Bash(git status)",
+      "Bash(git status *)",
+      "Bash(git diff)",
+      "Bash(git diff *)",
+      "Bash(git -C:* diff:*)",
+      "Bash(git -C:* log:*)",
+      "Bash(git -C:* status:*)",
+      "Bash(git -C:* show:*)",
+      "Bash(git log)",
+      "Bash(git log *)",
+      "Bash(git branch)",
+      "Bash(git branch *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git pull)",
+      "Bash(git pull *)",
+      "Bash(git fetch)",
+      "Bash(git fetch *)",
+      "Bash(git checkout *)",
+      "Bash(git switch *)",
+      "Bash(git stash)",
+      "Bash(git stash *)",
+      "Bash(git show *)",
+      "Bash(git rev-parse *)",
+      "Bash(python *)",
+      "Bash(python3 *)",
+      "Bash(pip install *)",
+      "Bash(pip list)",
+      "Bash(pip show *)",
+      "Bash(pip freeze)",
+      "Bash(pytest)",
+      "Bash(pytest *)",
+      "Bash(uv *)",
+      "Bash(uvx *)",
+      "Bash(cat *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(wc *)",
+      "Bash(grep *)",
+      "Bash(rg *)",
+      "Bash(find *)",
+      "Bash(ls *)",
+      "Bash(tree)",
+      "Bash(tree *)",
+      "Bash(pwd)",
+      "Bash(which *)",
+      "Bash(echo *)",
+      "Bash(mkdir *)",
+      "Bash(cp *)",
+      "Bash(mv *)",
+      "Bash(touch *)",
+      "Bash(diff *)",
+      "Bash(jq *)",
+      "Bash(sed *)",
+      "Bash(awk *)",
+      "Bash(sort *)",
+      "Bash(* --version)",
+      "Bash(* --help)",
+      "Bash(tofu fmt -recursive*)",
+      "Bash(pre-commit run*)"
+    ],
+    "ask": [
+      "Bash(git push)",
+      "Bash(git push *)",
+      "Bash(rm *)",
+      "Bash(chmod *)",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(eval *)",
+      "Bash(exec *)",
+      "Bash(bash -c *)",
+      "Bash(sh -c *)",
+      "Bash(python -c *)"
+    ],
+    "deny": [
+      "Bash(sudo *)",
+      "Bash(su *)",
+      "Bash(ssh *)",
+      "Bash(nc *)",
+      "Bash(rm -rf /*)",
+      "Bash(dd *)",
+      "Bash(kill *)",
+      "Bash(killall *)",
+      "Bash(shutdown *)",
+      "Bash(reboot *)",
+      "Bash(npm publish)",
+      "Bash(npm publish *)",
+      "Bash(git push --force)",
+      "Bash(git push --force *)",
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Read(**/secrets/**)",
+      "Read(**/.ssh/**)",
+      "Read(**/.aws/credentials)"
+    ]
+  }
+}
